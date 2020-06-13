@@ -1,0 +1,21 @@
+Program Architecture, and Class Overviews:
+
+(See below for a summary of the Files Organization)
+
+The program is divided into control, entity, user-interface (UI), and collection classes.
+
+The overall program runs through main.cc, however Control is the class which manages and controls the program flow.
+
+Control is responsible for moderating the different rounds, and keeps track of all current players and items, which are each stored using a C++ STL list.
+
+Register objects keep track of the players and items located at each location  in the dungeon (Position object). It stores these using two singly linked lists implemented in List.h.
+
+Building on the Register class, the BoardMap class is responsible for retrieving the correct Register given a specific location (or Position object). It implements a hash map to do this, which uses an adapted hash function created by Matthew Szudnik from Wolfram Research Inc., which maps pairs of ints to ints.
+
+The View class handles the UI and the display board, the latter of which is implemented in the Array2D.h. 
+
+The Array2D class implements a template collection class representing a 2 dimensional array. 
+
+The random class simply implements the random number generator function.
+
+The rest of the classes are all entity classes representing the different player, and item types within the game. For more details on those types, please see the MorePlayerAndItemInfo.txt file in the 'documentation' directory.

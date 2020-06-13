@@ -1,0 +1,19 @@
+More Player and Item Details:
+
+Player objects represent the interacting characters in the dungeon, and are divided into three groups: Heroes, Fighters, and Dragons, which each have their own move behaviour in the dungeon. 
+
+The Fighter class further divides into Goblins, Orcs, and Dorcs, with the main difference between these classes being in the player stats (mainly strength).
+
+As mentioned in the Program Overview, Heroes only ever attack Fighters, and Fighters only attack Heroes. Dragons don't attack Fighters, and kill Heroes instantly, and Heroes never deal any damage to a Dragon at this stage.
+
+Item objects represent the items found within the dungeon and are divided into two groups: Potions and Armour. Potions affect a Player's health, whereas Armour influences a Player's strength or armour attribute.
+
+For Potions, Players can either find a Health Potion or a Wicked Potion. 
+	- Health Potions help boost a Hero's health, and give them a boost of 1-4 health points, however Health Potions have no effect on a Fighter, who choose to leave the potions where they are.
+	- Wicked Potions are Health Potions in disguise. When a Hero drinks them, their health goes down by 1-2 points, and can kill a Hero. Fighters get a health boost from Wicked Potions which increases their health by 1-2 points.
+
+Armour items are divided into two groups as well: Swords and Shields. 
+	- Swords affect a Player's strength attribute, and will increase a Hero's strength by 1-4 points, but will decrease a Fighter's strength by half.
+	- Shields boost a Player's armour level by 1-3 points for both Heroes and Fighters .
+
+In general, Dragons are too epic for petty things like items, and so Dragons never bother with any item they happen to come across.
