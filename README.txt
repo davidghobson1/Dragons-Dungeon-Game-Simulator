@@ -116,10 +116,10 @@ Sample iterations of the game simulation are included below. The game continues 
 |         ?              o|          |         ?             o |    
 |-------------------------|          |-------------------------|
 - A dorc spawning on the right 
-					.
-					.
-					.
-					.
+				.
+				.
+				.
+				.
 |-------------------------|          |-------------------------|
 |    ?            d       |          |    ?            d       |  
 |  ?    ?           ?  d D=          |  ?    ?          ?  d  D=  
@@ -128,10 +128,10 @@ Sample iterations of the game simulation are included below. The game continues 
 |         ?  S       g    |          |        ?              g |    
 |-------------------------|          |-------------------------|
 - Frodo dying through a collision with a goblin
-					.
-					.
-					.
-					.
+				.
+				.
+				.
+				.
 |-------------------------|          |-------------------------|
 |    ?            d       |          |    ?        o           |  
 |  ?    ?           ?  d D=          |  ?  d             d    D=  
