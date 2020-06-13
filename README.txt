@@ -1,13 +1,14 @@
-Dragon's Dungeon Simulator Game
+Dragon's Dungeon Game Simulator
 
 Author: David Hobson 
 (Main concept and the random.cc file from Dr. Christine Laurendeau at Carleton University)
 
 Summary:
-A game program simulating the journey of heros across the dangerous Dragon's Dungeon as they seek to steal the 
-sacred Emerald from the Dragon's cave. (Even as the Dragon and many fighters and monsters stand in there way!)
+A basic game program simulating heroes' quests to steal the sacred Emerald from the dangerous Dragon's Dungeon. Can they survive their journey across the dungeon to retrieve the Emerald, 
+with monsters and the Dragon in their path?!? Play to find out!! 
 
 List of source and header files:
+
 - main.cc
 - Control.cc and Control.h
 - View.cc and View.h
@@ -40,10 +41,90 @@ Other files:
 - README.txt
 
 Compilation and Launch Instructions:
-Please run "make" from the command line in the main directory and everything should compile nicely
-The executable will be called "play"
-Please run the program with the "./play" command, and with any luck, your heros will come out
-with the Emerald!
+Run "make" from the command line in the main directory, and the executable will be called "play"
+Run the program with "./play", and with any luck, your heros will come out with the Emerald!
+
+
+About: 
+This program simulates heroes' travelling through the dungeon shown below, in an attempt to try to steal the sacred Emerald located inside the Dragon's lair at the opposite side of the dungeon. 
+
+|-------------------------|
+|                         |  
+|H                        =  
+|                        D= *  
+|Q                        =  
+|                         |    
+|-------------------------|
+* diagram of the Dragon's Dungeon, with the lair on the right shown with the ='s, the Emerald (*), the Dragon (D), and the two heroes on the left (H and Q)
+
+Guarding the lair is the Dragon, pacing back and forth, guarding the loot. To steal the Emerald, the heroes must traverse the dungeon and enter the lair (shown with the ='s), all without dying, or encountering the Dragon (who will roast them for a nice little snack if anyone happens to be found trying to steal the treasure). 
+
+Along the way, heroes may also encounter monsters including Goblins, Orcs, and Dorcs, who they will have to fight to continue on their mission. Monsters spawn up on the right of the dungeon, with the sole mission to destroy any heroes in their way.
+
+Also along the path however, are useful items including potions, and bits of armour which the heroes can use to aid in their quests. Although these can be useful to the heroes, they can also be used by the monsters, and so they are somewhat of a double-edged sword.
+
+The first few iterations of a sample execution of the program are shown below.
+
+|-------------------------|
+|    ?         ??       ? |  
+|H ?    ?           ?     =  
+|               ?        D= *  
+|Q    ??    ?          ?  =  
+|         ?               |    
+|-------------------------|
+- sample board creation
+
+|-------------------------|
+|    ?         ??       ?g|  
+| H?    ?           ?    D=  
+|              ?          = *  
+|    ??    ?          ?   =  
+| Q       ?               |    
+|-------------------------|
+- H collecting an item, and a goblin spawning
+
+|-------------------------|
+|    ?         ??       g |  
+|  H    ?           ?     =  
+|              ?         D= *  
+|  Q ??    ?          ?   =  
+|         ?              o|    
+|-------------------------|
+- goblin collecting an item
+- orc spawning 
+
+|-------------------------|
+|    ?         ??      g  |  
+|      ?           ?     d=  
+|   H           ?         = *  
+|    ??    ?          ?  D=  
+|   Q     ?             o |    
+|-------------------------|
+- dorc spawning
+
+|-------------------------|
+|    ?         ??    g  d |  
+|      ?           ?      =  
+|    H          ?        D= *  
+|    Q?    ?          ?o  =  
+|         ?              g|    
+|-------------------------|
+- Q collecting an item
+- another goblin spawning
+
+and user chooses a number of Heroes to venture forth into the Dungeon to retrieve the Emerald. The user can choose the dungeon dimensions, as well as name their heroes, but the stats of the heroes are up to fate, and the program randomly generates their stats when created. 
+
+The game 
+
+
+
+
+
+
+
+
+
+
 
 Innovative feature:
 My feature involves adding items into Dragon's Hollow which Players can collect and interact with
