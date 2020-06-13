@@ -4,8 +4,7 @@ Author: David Hobson
 (Main concept and the random.cc file from Dr. Christine Laurendeau at Carleton University)
 
 Summary:
-A basic game program simulating heroes' quests to steal the sacred Emerald from the dangerous Dragon's Dungeon. Can they survive their journey across the dungeon to retrieve the Emerald, 
-with monsters and the Dragon in their path?!? Play to find out!! 
+A basic game program simulating heroes' quests to steal the sacred Emerald from the dangerous Dragon's Dungeon. Can they survive their journey across the dungeon to retrieve the Emerald, with monsters and the Dragon in their path?!? Play to find out!! 
 
 List of source and header files:
 
