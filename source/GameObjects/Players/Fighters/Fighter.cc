@@ -5,13 +5,14 @@ using namespace std;
 
 #include "Fighter.h"
 
+char Fighter::type = 2;
+
+int Fighter::maxHealth = 10;
+int Fighter::maxStrength = 15;
+int Fighter::maxArmour = 6;
+
 Fighter::Fighter()
 {
-  type = 2;
-  maxHealth = 10;
-  maxStrength = 15;
-  maxArmour = 6;
-
   setHealth(5);
   setArmour(0);
 }
@@ -69,4 +70,21 @@ void Fighter::attack(Player* otherPlayer, int& damageGiven)
 			damageGiven = 0;
 		}
 	}
+}
+
+char Fighter::getType() const  {  return Fighter::type;  }
+
+void Fighter::setHealth(int h)
+{
+  Player::setHealth(h, maxHealth);
+}
+
+void Fighter::setStrength(int s)
+{
+	Player::setStrength(s, maxStrength);
+}
+
+void Fighter::setArmour(int a)
+{
+	Player::setArmour(a, maxArmour);
 }

@@ -231,7 +231,7 @@ void View::createBoard()
       xdim = x;
       ydim = y;
 
-      printString("The game board is " + to_string(xdim) + " x " + to_string(ydim) + "!");
+      cout << "The game board is " << xdim << " x " << ydim << "!" << endl << endl;
       createdBoard = true;
     }else if(x == -1 && y == -1){             //if user enters (-1, -1), the program terminates
       printString("Please play again soon!");
@@ -251,7 +251,7 @@ void View::createBoard()
 //provides basic error checking to ensure the user enters integer dimensions
 void View::askUserBoardDimensions(int& x, int& y)
 {
-  cout << "Enter dimensions for the game board: (Must be at least " << XMIN << " x " << YMIN << " and at most " << XMAX << " x " << YMAX << ")" << endl;
+  cout << "Enter dimensions for the game board (Must be at least " << XMIN << " x " << YMIN << " and at most " << XMAX << " x " << YMAX << ")" << endl;
   cout << "Enter (-1, -1) to quit" << endl;
   cout << "x = ";
   while(!(cin >> x)){
@@ -265,6 +265,73 @@ void View::askUserBoardDimensions(int& x, int& y)
     cin.ignore(100, '\n');
     cout << "Only numbers are accepted!" << endl;
   }
+}
+
+//retrieves the number of heros to play in the game
+//the number of players must be less than the playable y-dimension and also less
+//than the maximum allowable number of heros set in Control
+void View::getNumberOfHeros(int& n, int maxNumOfHeros)
+{
+  bool numberKnown = false;
+  //detemine the maximum number of heros that can be chosen
+  int max = (maxNumOfHeros > ydim ? ydim : maxNumOfHeros);
+
+  while(!numberKnown){
+    //ask the user for the number of heros
+    askUserNumOfHeros(n, max);
+
+    //check that the number of heros is valid
+    if(n > 0 && n <= max){
+      cout << "Creating " << n << " heros!" << endl;
+      numberKnown = true;
+    }else if(n == -1){             //if user enters -1, the program terminates
+      printString("Please play again soon!");
+      exit(0);
+    }else{                  //the user has entered an invalid number of heros, so ask again for a valid one
+      cout << endl << "Sorry! Number of heros must be between 1 and " << max << "!" << endl;
+    }
+  }
+}
+
+//asks the user for the number of heros
+//helper function for getNumberOfHeros
+void View::askUserNumOfHeros(int& n, int max)
+{
+  cout << endl << "Please choose a number of heros to play." << endl;
+  cout << "(Must be at least 1, and at most " << max << ". Enter -1 to quit)" << endl;
+  while(!(cin >> n)){
+    cin.clear();
+    cin.ignore(100, '\n');
+    cout << "Only numbers are accepted!" << endl;
+  }
+}
+
+//asks the user to name a hero
+//entering "quit" quits the program
+void View::getNameOfHero(string& s, int i)
+{
+  cout << endl << "Please give a name for Hero " << i << ":" << endl;
+  cout << "(No spaces allowed. Enter 'quit' to quit)" << endl;
+  while(!(cin >> s)){
+    cin.clear();
+    cin.ignore(100, '\n');
+    cout << "Please enter a valid name!" << endl;
+  }
+
+  if(s == "quit"){
+    printString("Please play again soon!");
+    exit(0);
+  }
+}
+
+//displays the stats of the new heros being created
+void View::displayPlayerStats(Player* newPlayer)
+{
+  cout << "New Player!   Health:" << newPlayer->getHealth() << endl;
+  cout << "\t      Strength:" << newPlayer->getStrength() << endl;
+  cout << "\t      Armour:" << newPlayer->getArmour() << endl;
+  cout << "\t      Avatar:" << newPlayer->getAvatar() << endl;
+  cout << "\t      Position:" << newPlayer->getPosition() << endl;
 }
 
 //initializes the display board

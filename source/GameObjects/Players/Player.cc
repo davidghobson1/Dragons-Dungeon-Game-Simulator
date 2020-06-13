@@ -7,6 +7,12 @@ using namespace std;
 
 int Player::nextId = 1;
 
+char Player::type = -1;
+
+int Player::maxHealth = 10;
+int Player::maxStrength = 10;
+int Player::maxArmour = 10;
+
 Player::Player(int h, int s, int a, char av, int px, int py): id(nextId++), health(h), strength(s), armour(a), avatar(av), position(px, py) {   }
 
 Player::Player(const Player& player)
@@ -18,7 +24,6 @@ Player::Player(const Player& player)
   armour = player.armour;
   avatar = player.avatar;
   position = player.position;
-  type = player.type;
 }
 
 Player::~Player() {   }
@@ -30,7 +35,6 @@ Player& Player::operator=(const Player& player)
   armour = player.armour;
   avatar = player.avatar;
   position = player.position;
-  type = player.type;
 
   return *this;
 }
@@ -93,6 +97,17 @@ void Player::setHealth(int h)
   }
 }
 
+void Player::setHealth(int h, int healthMax)
+{
+  if(h < 0){
+    health = 0;
+  }else if(h > healthMax){
+    health = healthMax;
+  }else{
+    health = h;
+  }
+}
+
 void Player::setStrength(int s)
 {
   if(s < 0){
@@ -104,12 +119,34 @@ void Player::setStrength(int s)
   }
 }
 
+void Player::setStrength(int s, int strengthMax)
+{
+  if(s < 0){
+    strength = 0;
+  }else if(s > strengthMax){
+    strength = strengthMax;
+  }else{
+    strength = s;
+  }
+}
+
 void Player::setArmour(int a)
 {
   if(a < 0){
     armour = 0;
   }else if(a > maxArmour){
     armour = maxArmour;
+  }else{
+    armour = a;
+  }
+}
+
+void Player::setArmour(int a, int armourMax)
+{
+  if(a < 0){
+    armour = 0;
+  }else if(a > armourMax){
+    armour = armourMax;
   }else{
     armour = a;
   }

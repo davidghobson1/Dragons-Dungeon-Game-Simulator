@@ -4,15 +4,16 @@ using namespace std;
 
 #include "Dragon.h"
 
+char Dragon::type = 3;
+
+int Dragon::maxHealth = 10000;
+int Dragon::maxStrength = 10000;
+int Dragon::maxArmour = 10000;
+
 Dragon::Dragon(int px, int py)
 {
-  type = 3;
   direction = 1;
   caveLocation = py;
-
-  maxHealth = 10000;
-  maxStrength = 10000;
-  maxArmour = 10000;
 
   setName("Dragon");
   setHealth(10000);
@@ -51,6 +52,23 @@ int Dragon::getDirection() const {  return direction;  }
 
 //changes the direction the Dragon is pacing in front of the cave
 void Dragon::changeDirection() { direction = (direction == 1 ? -1 : 1 );}
+
+char Dragon::getType() const  {  return type;  }
+
+void Dragon::setHealth(int h)
+{
+  Player::setHealth(h, maxHealth);
+}
+
+void Dragon::setStrength(int s)
+{
+	Player::setStrength(s, maxStrength);
+}
+
+void Dragon::setArmour(int a)
+{
+	Player::setArmour(a, maxArmour);
+}
 
 //Dragons pace back and forth in front of the cave
 void Dragon::move(int xdim, int ydim, int caveTop, int caveBottom)

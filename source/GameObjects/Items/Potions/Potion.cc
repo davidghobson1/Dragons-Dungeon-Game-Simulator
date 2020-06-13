@@ -5,10 +5,9 @@ using namespace std;
 #include <string>
 #include "random.h"
 
-Potion::Potion(int x, int y): Item(x, y)
-{
-  type = 1;
-}
+char Potion::type = 1;
+
+Potion::Potion(int x, int y): Item(x, y)  {   }
 
 Potion::~Potion() {   }
 

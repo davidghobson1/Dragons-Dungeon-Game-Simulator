@@ -290,29 +290,48 @@ void Control::initializeGame()
 
   //initialize the players and items
   initializePlayers(xdim, ydim);
-  initializeBoardItems(xdim, ydim);
+  initializeItems(xdim, ydim);
 
   //update the display board
   updateDisplay();
 }
 
-//initializes the heros: Emmer and Jaye, and the Dragon
+//initializes the Dragon, and the heros based on user input
+//users input the number of heros and the names of the heros
+//the hero stats are generated randomly
 void Control::initializePlayers(int xdim, int ydim)
 {
-  Player* emmer = new Hero("Emmer", 15, 3, 3, 'E', 1, random(100)%ydim + 1);
-  Player* jaye = new Hero("Jaye", 15, 5, 1, 'J', 1, random(100)%ydim + 1);
+  //ask user for number of heros
+  int numOfHeros;
+  view.getNumberOfHeros(numOfHeros, MAX_NUM_OF_HEROS);
+
+  //get the hero names, display their stats, and add them to the list of players
+  string heroName;
+  for(int i = 1; i <= numOfHeros; i++){
+    //get the hero's name from the user
+    view.getNameOfHero(heroName, i);
+    //capitalize the first letter just in case
+    heroName[0] = toupper(heroName[0]);
+
+    //create the player
+    Player* newPlayer = new Hero(heroName, 15, random(5) + 1, random(6), toupper(heroName[0]), 1, random(100)%ydim + 1);
+
+    //display the player's stats
+    view.displayPlayerStats(newPlayer);
+
+    //add the player to the list of players and to the board
+    playerList.push_back(newPlayer);
+    board.addPlayer(newPlayer, view);
+  }
+
   Player* dragon = new Dragon(xdim, (ydim+1)/2);
-  playerList.push_back(emmer);
-  board.addPlayer(emmer, view);
-  playerList.push_back(jaye);
-  board.addPlayer(jaye, view);
   playerList.push_back(dragon);
   board.addPlayer(dragon, view);
 }
 
 //initializes the Items in the game (between 11 and 30 items are randomly generated)
 //and places them on the board
-void Control::initializeBoardItems(int xdim, int ydim)
+void Control::initializeItems(int xdim, int ydim)
 {
   //randomly choose a number between 11 and 30 for the number of items
   int numberOfItems = random(100)%20 + 11;

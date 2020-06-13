@@ -5,10 +5,9 @@ using namespace std;
 #include <string>
 #include "random.h"
 
-Armour::Armour(int x, int y): Item(x, y)
-{
-  type = 2;
-}
+char Armour::type = 2;
+
+Armour::Armour(int x, int y): Item(x, y) {   }
 
 Armour::~Armour() {   }
 

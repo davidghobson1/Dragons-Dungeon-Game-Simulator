@@ -4,6 +4,8 @@ using namespace std;
 
 #include "Item.h"
 
+char Item::type = -1;
+
 Item::Item(int x, int y): position(x,y), collected(false) {   }
 
 Item::~Item() {   }
@@ -11,7 +13,6 @@ Item::~Item() {   }
 Item& Item::operator=(const Item& item)
 {
   name = item.name;
-  type = item.type;
   collected = item.collected;
   position = item.position;
   return *this;
@@ -20,10 +21,9 @@ Item& Item::operator=(const Item& item)
 bool Item::operator==(const Item& other)
 {
   bool b1 = (name == other.name);
-  bool b2 = (type == other.type);
-  bool b3 = (collected == other.collected);
-  bool b4 = (position == other.position);
-  return b1 && b2 && b3 && b4;
+  bool b2 = (collected == other.collected);
+  bool b3 = (position == other.position);
+  return b1 && b2 && b3;
 }
 
 bool Item::operator<(const Item& other)
@@ -45,9 +45,11 @@ int Item::getY() const {  return position.getY();  }
 
 Position& Item::getPosition() {  return position;  }
 
+char Item::getType() const {  return type;  }
+
 bool Item::hasBeenCollected() const {  return collected;  }
 
-void Item::setCollected(bool b) {  collected = b;  }
+void Item::setCollected(bool b) { collected = b;  }
 
 void Item::setPosition(int newX, int newY)
 {

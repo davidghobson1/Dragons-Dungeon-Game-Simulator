@@ -5,14 +5,14 @@ using namespace std;
 
 #include "Hero.h"
 
+char Hero::type = 1;
+
+int Hero::maxHealth = 15;
+int Hero::maxStrength = 10;
+int Hero::maxArmour = 6;
+
 Hero::Hero(string name, int h, int s, int a, char av, int px, int py)
 {
-  type = 1;
-
-	maxHealth = 15;
-	maxStrength = 10;
-	maxArmour = 6;
-
   setName(name);
   setHealth(h);
   setStrength(s);
@@ -23,12 +23,24 @@ Hero::Hero(string name, int h, int s, int a, char av, int px, int py)
 
 Hero::~Hero() {   }
 
+char Hero::getType() const  {  return type;  }
+
 void Hero::setHealth(int h)
 {
-	Player::setHealth(h);
+	Player::setHealth(h, maxHealth);
 	if(hasDied()){
 		setAvatar('+');
 	}
+}
+
+void Hero::setStrength(int s)
+{
+	Player::setStrength(s, maxStrength);
+}
+
+void Hero::setArmour(int a)
+{
+	Player::setArmour(a, maxArmour);
 }
 
 //Heros move function
