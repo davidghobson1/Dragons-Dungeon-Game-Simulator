@@ -1,6 +1,7 @@
 Dragon's Dungeon Simulator Game
 
-Author: David Hobson (with concept and the random.cc file from Dr. Christine Laurendeau (Carleton University)
+Author: David Hobson 
+(Main concept and the random.cc file from Dr. Christine Laurendeau at Carleton University)
 
 Summary:
 A game program simulating the journey of heros across the dangerous Dragon's Dungeon as they seek to steal the 
