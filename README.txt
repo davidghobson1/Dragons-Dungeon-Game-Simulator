@@ -1,12 +1,10 @@
-COMP2404 B - Take-Home Final Exam
+Dragon's Dungeon Simulator Game
 
-Author: David Hobson (with concept and the random.cc file from Dr. Christine Laurendeau)
-Student Number: 100853733
+Author: David Hobson (with concept and the random.cc file from Dr. Christine Laurendeau (Carleton University)
 
-Purpose:
-A game program simulating the journey of heros across the dangerous Dragon's Dungeon
-as they seek to steal the sacred Emerald from the Dragon's cave. (Even as the Dragon and
-many fighters and monsters stand in there way!)
+Summary:
+A game program simulating the journey of heros across the dangerous Dragon's Dungeon as they seek to steal the 
+sacred Emerald from the Dragon's cave. (Even as the Dragon and many fighters and monsters stand in there way!)
 
 List of source and header files:
 - main.cc
@@ -41,9 +39,9 @@ Other files:
 - README.txt
 
 Compilation and Launch Instructions:
-Please run "make" from the command line in this directory and everything should compile nicely
+Please run "make" from the command line in the main directory and everything should compile nicely
 The executable will be called "play"
-Please run the program with the "./play" command, and with any luck, our heros will come out
+Please run the program with the "./play" command, and with any luck, your heros will come out
 with the Emerald!
 
 Innovative feature:
