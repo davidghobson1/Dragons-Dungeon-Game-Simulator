@@ -7,6 +7,8 @@
 #include "View.h"
 #include "BoardMap.h"
 
+#define MAX_NUM_OF_HEROS 8
+
 /*****************************************************
  * Control Class
 Simulates the rounds and manages the interactions of the Players and Items, as the heros seek
@@ -48,7 +50,7 @@ class Control
 
     void initializeGame();
     void initializePlayers(int, int);
-    void initializeBoardItems(int, int);
+    void initializeItems(int, int);
     void printInitializedGame();
 };
 

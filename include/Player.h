@@ -43,7 +43,7 @@ class Player
     int getArmour() const;
     char getAvatar() const;
     Position& getPosition();
-    char getType() const;
+    virtual char getType() const;
     int getX() const;
     int getY() const;
     bool hasDied() const;
@@ -62,16 +62,20 @@ class Player
     int armour;
     char avatar;
     Position position;
-    char type;
 
-    int maxHealth;
-    int maxStrength;
-    int maxArmour;
+    static char type;
+
+    static int maxHealth;
+    static int maxStrength;
+    static int maxArmour;
 
     void setName(string);
     virtual void setHealth(int);
+    virtual void setHealth(int, int);
     virtual void setStrength(int);
+    virtual void setStrength(int, int);
     virtual void setArmour(int);
+    virtual void setArmour(int, int);
     void setAvatar(char);
     void setPosition(int, int);
     void setPosition(Position&);

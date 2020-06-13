@@ -66,6 +66,10 @@ class View
 
     void createBoard();
 
+    void getNumberOfHeros(int&, int);
+    void getNameOfHero(string&, int);
+    void displayPlayerStats(Player*);
+
   private:
     Array2D<char>* board;
     int xdim;
@@ -77,6 +81,8 @@ class View
 
     void askUserBoardDimensions(int&, int&);
     void initializeBoard(int, int);
+
+    void askUserNumOfHeros(int&, int);
 
     void printCenter(string, char);
 };

@@ -30,6 +30,8 @@ class Armour: public Item
   protected:
     int boost;
     string boostType;
+
+    static char type;
 };
 
 #endif

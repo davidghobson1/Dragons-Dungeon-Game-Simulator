@@ -26,12 +26,23 @@ class Dragon: public Player
 
     virtual void move(int, int, int, int);
 
-  private:
+  protected:
     int direction;
     int caveLocation;
 
+    static char type;
+
+    static int maxHealth;
+    static int maxStrength;
+    static int maxArmour;
+
     int getDirection() const;
     void changeDirection();
+
+    virtual char getType() const;
+    virtual void setHealth(int);
+    virtual void setStrength(int);
+    virtual void setArmour(int);
 
     virtual void attack(Player*, int&);
 };

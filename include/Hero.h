@@ -10,7 +10,7 @@
  * Hero Class
 Derived class of Player representing a hero attempting to retrieve the Emerald.
 
-Heros have Type = 1, a maximum health of 15, a max strength of 10, and a max 
+Heros have Type = 1, a maximum health of 15, a max strength of 10, and a max
 armour of 6
 ******************************************************/
 
@@ -22,8 +22,18 @@ class Hero: public Player
 
     virtual void move(int, int, int, int);
 
-  private:
+  protected:
+    static char type;
+
+    static int maxHealth;
+    static int maxStrength;
+    static int maxArmour;
+
+    virtual char getType() const;
     virtual void setHealth(int);
+    virtual void setStrength(int);
+    virtual void setArmour(int);
+
     virtual void attack(Player*, int&);
     virtual void checkBounds(int&, int&, int, int, int, int);
 };

@@ -30,16 +30,17 @@ class Item
     string getName() const;
     bool hasBeenCollected() const;
     virtual void collect(int&, int&, int&, char) = 0;
-    virtual char getType() const = 0;
+    virtual char getType() const;
     int getX() const;
     int getY() const;
     Position& getPosition();
 
   protected:
     string name;
-    char type;
     bool collected;
     Position position;
+
+    static char type;
 
     void setPosition(int, int);
     void setCollected(bool);

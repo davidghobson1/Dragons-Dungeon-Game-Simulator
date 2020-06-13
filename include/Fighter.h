@@ -24,9 +24,19 @@ class Fighter: public Player
     virtual void move(int, int, int, int);
 
   protected:
+    static char type;
+
+    static int maxHealth;
+    static int maxStrength;
+    static int maxArmour;
+
+    virtual char getType() const;
+    virtual void setHealth(int);
+    virtual void setStrength(int);
+    virtual void setArmour(int);
+
     virtual void attack(Player*, int&);
     virtual void checkBounds(int&, int&, int, int, int, int);
-
 };
 
 #endif
