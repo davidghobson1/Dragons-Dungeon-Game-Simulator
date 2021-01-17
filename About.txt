@@ -1,0 +1,47 @@
+Author: David Hobson 
+(Main concept and the random.cc file from Dr. Christine Laurendeau at Carleton University)
+
+Purpose:
+A basic game program simulating heroes' quests to steal the sacred Emerald from the dangerous Dragon's Dungeon. 
+
+For an overview of the game, please see Game_Overview.txt
+
+File Organization:
+All header files and source files are located in the 'include' and 'source' directories respectively. The 'source' directory is then further divided into a collection class, control, game objects, user-interface, and an other directory, based on the purpose of the code. 
+For more information on the general program architecture, and for an overview on the different classes, please see the ArchitectureAndClassOverviews.txt file in the 'documentation' directory.
+
+List of source and header files:
+- main.cc
+- Control.cc and Control.h
+- View.cc and View.h
+- BoardMap.cc and BoardMap.h
+- Register.cc and Register.h
+
+- Hero.cc and Hero.h
+- Dragon.cc and Dragon.h
+- Fighter.cc and Fighter.h
+- Goblin.cc and Goblin.h
+- Orc.cc and Orc.h
+- Dorc.cc and Dorc.h
+- Player.cc and Player.h
+- Position.cc and Position.h
+
+- Item.cc and Item.h
+- Potion.cc and Potion.h
+- HealthPotion.cc and HealthPotion.h
+- WickedPotion.cc and WickedPotion.h
+- Armour.cc and Armour.h
+- Shield.cc and Shield.h
+- Sword.cc and Sword.h
+
+- Array2D.h
+- List.h
+- random.cc and random.h
+
+Other files:
+- Makefile
+- README.txt
+
+Compilation and Launch Instructions:
+Run 'make' from the command line in the main directory, and the executable will be called 'play'
+Run the program with './play', and with any luck, your heroes will come out with the Emerald!
