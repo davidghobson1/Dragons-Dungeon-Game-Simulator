@@ -4,7 +4,7 @@ Author: David Hobson
 Purpose:
 A basic game program simulating heroes' quests to steal the sacred Emerald from the dangerous Dragon's Dungeon. 
 
-For an overview of the game, please see GameOverview.txt
+For an overview of the game, please see README.txt
 
 File Organization:
 All header files and source files are located in the 'include' and 'source' directories respectively. The 'source' directory is then further divided into a collection class, control, game objects, user-interface, and an other directory, based on the purpose of the code. 
