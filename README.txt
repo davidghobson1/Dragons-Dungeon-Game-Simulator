@@ -1,4 +1,4 @@
-Game Overview: 
+Dragon's Dungeon Game Simulator
 
 (For a summary of the behaviour of the Player and Item classes, please see the MorePlayerAndItemInfo.txt file in the 'documentation' directory.)
 
