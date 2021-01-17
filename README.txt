@@ -6,9 +6,9 @@ This program simulates heroes' travelling through a dungeon in an attempt to try
 
 |-------------------------|
 |                         |  
-|F                        =  
+|B                        =  
 |                        D= *  
-|S                        =  
+|G                        =  
 |                         |    
 |-------------------------|
 - diagram of the Dragon's Dungeon, with the lair on the right shown with the ='s, the Emerald (*), the Dragon (D), and the two heroes on the left (H and Q)
@@ -19,16 +19,16 @@ Along the way, heroes may encounter monsters whom they will have to fight, inclu
 
 When the game starts, the user is asked to enter a dimension for the dungeon (the board), as well as to choose a number of heroes to play. For each hero, the user can give them a name, the first letter of which, will serve as the hero's avatar which can be used to track their path through the dungeon. All heroes start out with a health of 15, but with their other stats, including their strength and armour, generated randomly at start-up. Heroes are then placed at random vertical positions at the start of the board, and between 11 and 30 items are then randomly generated and scattered throughout the dungeon. Items can be seen on the board through the '?' mark.
 
-A sample dungeon after creation is given below, in the case of two heroes Frodo and Sam.
+A sample dungeon after creation is given below, in the case of two heroes: Bilbo and Gandalf.
 
 |-------------------------|
 |    ?         ??       ? |  
-|F??    ?           ?     =  
+|B??    ?           ?     =  
 |               ?        D= *  
-|S    ??    ?          ?  =  
+|G    ??    ?          ?  =  
 |         ?               |    
 |-------------------------|
-- sample board creation. 'F' represents Frodo, 'S' is Sam, 'D' is the Dragon, and '?' are the items
+- sample board creation. 'B' represents Bilbo, 'G' is Gandalf, 'D' is the Dragon, and '?' are the items
 
 In each round, the heroes move one position to the right, and either up, down or straight, which is chosen randomly. The dragon (D) paces back and forth in front of the lair, and a monster spawns at the far right side of the dungeon with 60% probability. The monsters are also spawned at a random vertical position, with a random fighter type (either goblin, orc, or dorc), and move through the dungeon one position left at a time, either up, down, or straight (which is randomly selected). For fighters, if they happen to reach the entrance of the dungeon without being killed, they exit the dungeon continuing on their merry way, and never re-enter the dungeon. 
 
@@ -38,29 +38,29 @@ Sample iterations of the game simulation are included below. The game continues 
 
 |-------------------------|          |-------------------------|
 |    ?         ??       ? |          |    ?         ??       ?g|  
-|F??    ?           ?     =          | F?    ?           ?    D= 
+|B??    ?           ?     =          | B?    ?           ?    D= 
 |              ?         D= *  ->    |              ?          = *
 |    ??    ?          ?   =          |    ??    ?          ?   =  
-|S        ?               |          | S       ?               |    
+|G        ?               |          | G       ?               |    
 |-------------------------|          |-------------------------|
-- Frodo finding an item on his first move!    
+- Bilbo finding an item on his first move!    
 - A goblin spawning on the right                 
 
 |-------------------------|          |-------------------------|
 |    ?         ??       ?g|          |    ?         ??       g |  
-| F?    ?           ?    D=          |  ?   ?           ?      = 
-|               ?         = *  ->    |  F           ?         D= *
-|     ??    ?         ?   =          |  S ??    ?          ?   =  
-| S       ?               |          |         ?              o|    
+| B?    ?           ?    D=          |  ?   ?           ?      = 
+|               ?         = *  ->    |  B           ?         D= *
+|     ??    ?         ?   =          |  G ??    ?          ?   =  
+| G       ?               |          |         ?              o|    
 |-------------------------|          |-------------------------|
-- A Goblin finding an item
+- A goblin finding an item
 - An orc spawning on the right 
 
 |-------------------------|          |-------------------------|
 |    ?         ??       g |          |    ?         ??      g  |  
 |  ?    ?           ?     =          | ?    ?            ?    d= 
-|  F            ?        D= *  ->    |  F           ?          = *
-|  S  ??    ?         ?   =          |  S ??    ?          ?  D=  
+|  B            ?        D= *  ->    |  B           ?          = *
+|  G  ??    ?         ?   =          |  G ??    ?          ?  D=  
 |         ?              o|          |         ?             o |    
 |-------------------------|          |-------------------------|
 - A dorc spawning on the right 
@@ -71,11 +71,11 @@ Sample iterations of the game simulation are included below. The game continues 
 |-------------------------|          |-------------------------|
 |    ?            d       |          |    ?            d       |  
 |  ?    ?           ?  d D=          |  ?    ?          ?  d  D=  
-|            F g          = *  ->    |             +           = *
-|               o     ?  g=          |            S  o     ?   =  
-|         ?  S       g    |          |        ?              g |    
+|            B g          = *  ->    |             +           = *
+|               o     ?  g=          |            G  o     ?   =  
+|         ?  G       g    |          |        ?              g |    
 |-------------------------|          |-------------------------|
-- Frodo dying through a collision with a goblin
+- Bilbo dying through a collision with a goblin
 				.
 				.
 				.
@@ -84,7 +84,7 @@ Sample iterations of the game simulation are included below. The game continues 
 |    ?            d       |          |    ?        o           |  
 |  ?    ?           ?  d D=          |  ?  d             d    D=  
 |            F g          = *  ->    |g d        g +   o       = *
-|               o     ?  g=          |        g                S  
+|               o     ?  g=          |        g                G  
 |         ?  S       g    |          | o      ? d     g      g |    
 |-------------------------|          |-------------------------|
-- Sam claiming the Emerald
+- Gandalf claiming the Emerald!
